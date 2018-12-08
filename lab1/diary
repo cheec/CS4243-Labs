@@ -1,0 +1,470 @@
+CLARENCE CHEE KANG HUI
+==============================
+Q1.1
+==============================
+
+A =
+
+     1     7     3
+     2     4     1
+     4     8     6
+
+
+B =
+
+    1.0000    1.0000    0.2500
+    2.0000    4.0000    1.0000
+    4.0000    8.0000    2.0000
+
+
+C =
+
+     0
+     0
+     0
+
+==============================
+Q1.2
+==============================
+
+Ua =
+
+   -0.5442   -0.7514   -0.3730
+   -0.3184   -0.2264    0.9205
+   -0.7762    0.6197   -0.1160
+
+
+Sa =
+
+   13.7679         0         0
+         0    2.1484         0
+         0         0    1.3523
+
+
+Va =
+
+   -0.3113    0.5933    0.7424
+   -0.8202   -0.5623    0.1054
+   -0.4800    0.5761   -0.6617
+
+
+Ub =
+
+   -0.1322    0.9912    0.0000
+   -0.4433   -0.0591   -0.8944
+   -0.8866   -0.1182    0.4472
+
+
+Sb =
+
+   10.3375         0         0
+         0    0.4459         0
+         0         0    0.0000
+
+
+Vb =
+
+   -0.4416    0.8972         0
+   -0.8704   -0.4284   -0.2425
+   -0.2176   -0.1071    0.9701
+
+Verifying Ua, Ub, Va, Vb are all orthonormal:
+
+(Orthornormal = all columns are unit vectors and orthogonal to each other)
+
+***********************
+magnitude of cols of Ua:
+
+col_1_mag =
+
+     1
+
+
+col_2_mag =
+
+    1.0000
+
+
+col_3_mag =
+
+    1.0000
+
+thus cols of Ua are unit vectors
+
+Ua.' * Ua:
+
+ans =
+
+    1.0000   -0.0000   -0.0000
+   -0.0000    1.0000   -0.0000
+   -0.0000   -0.0000    1.0000
+
+since Ua.' * Ua is an identity matrix, cols of Ua are orthogonal
+since cols of Ua are unit vectors and orthogonal to each other,
+Ua is orthonormal
+
+***********************
+magnitude of cols of Ub:
+
+col_1_mag =
+
+     1
+
+
+col_2_mag =
+
+    1.0000
+
+
+col_3_mag =
+
+     1
+
+thus cols of Ub are unit vectors
+
+Ub.' * Ub:
+
+ans =
+
+    1.0000    0.0000    0.0000
+    0.0000    1.0000    0.0000
+    0.0000    0.0000    1.0000
+
+since Ub.' * Ub is an identity matrix, cols of Ub are orthogonal
+since cols of Ub are unit vectors and orthogonal to each other,
+Ub is orthonormal
+
+***********************
+magnitude of cols of Va:
+
+col_1_mag =
+
+     1
+
+
+col_2_mag =
+
+     1
+
+
+col_3_mag =
+
+    1.0000
+
+thus cols of Va are unit vectors
+
+Va.' * Va:
+
+ans =
+
+    1.0000    0.0000    0.0000
+    0.0000    1.0000   -0.0000
+    0.0000   -0.0000    1.0000
+
+since Va.' * Va is an identity matrix, cols of Va are orthogonal
+since cols of Va are unit vectors and orthogonal to each other,
+Va is orthonormal
+
+***********************
+magnitude of cols of Vb:
+
+col_1_mag =
+
+    1.0000
+
+
+col_2_mag =
+
+    1.0000
+
+
+col_3_mag =
+
+     1
+
+thus cols of Vb are unit vectors
+
+Vb.' * Vb:
+
+ans =
+
+    1.0000   -0.0000   -0.0000
+   -0.0000    1.0000   -0.0000
+   -0.0000   -0.0000    1.0000
+
+since Vb.' * Vb is an identity matrix, cols of Vb are orthogonal
+since cols of Vb are unit vectors and orthogonal to each other,
+Vb is orthonormal
+***********************
+
+
+Sa =
+
+   13.7679         0         0
+         0    2.1484         0
+         0         0    1.3523
+
+
+Sb =
+
+   10.3375         0         0
+         0    0.4459         0
+         0         0    0.0000
+
+min singular A value: 1.3523 because A is full rank
+rank of A == 3 since 3 non-zero singular values
+min singular B value: 0 because B is rank deficient
+rank of B == 2 since two non-zero singular values
+
+==============================
+Q1.3
+==============================
+
+Solving Ax = C:
+
+det_A =
+
+   -40
+
+
+Sa =
+
+   13.7679         0         0
+         0    2.1484         0
+         0         0    1.3523
+
+det(A) != 0 and all singular values non-zero; thus x = zero vector
+
+Solving Bx = C:
+
+det_B =
+
+     0
+
+
+Sb =
+
+   10.3375         0         0
+         0    0.4459         0
+         0         0    0.0000
+
+det(B) == 0 and at least one of the singular values == 0
+non-zero solution is any linear combination of the following vector:
+
+ans =
+
+         0
+   -0.2425
+    0.9701
+
+this vector can be multiplied by a non-zero scalar to produce more solutions
+
+==============================
+Q1.4
+==============================
+
+
+F =
+
+    10    -4     0
+     2     3     2
+     8     2     3
+    -2     7     2
+
+No it can't be rank 4.
+max rank of F = min(num_rows, num_cols) = 3
+if we look at columns only, we have three vectors:
+
+col_1 =
+
+    10
+     2
+     8
+    -2
+
+
+col_2 =
+
+    -4
+     3
+     2
+     7
+
+
+col_3 =
+
+     0
+     2
+     3
+     2
+
+even if they were orthogonal to each other, they could at most, occupy
+three dimensions only since we need four orthogonal vectors to occupy four dimensions of space.
+Now if we look at rows only, we have four vectors:
+
+row_1 =
+
+    10
+    -4
+     0
+
+
+row_2 =
+
+     2
+     3
+     2
+
+
+row_3 =
+
+     8
+     2
+     3
+
+
+row_4 =
+
+    -2
+     7
+     2
+
+even if they were orthogonal to each other, they could at most, occupy
+three dimensions only because they all lack a fourth dimensional value.
+Thus, the max rank of F is 3.
+
+linear least squares solution to Fx = [1; 2; 3; 4]:
+
+x =
+
+    0.5000
+    1.0000
+   -1.0000
+
+
+E =
+
+     5    -4     0
+     1     3     4
+     4     3     6
+    -1     7     4
+
+linear least squares solution to Ex = [1; 2; 3; 4]:
+
+x =
+
+    1.0546
+    1.1160
+   -0.7065
+
+
+E_x =
+
+    0.8089
+    1.5768
+    3.3276
+    3.9317
+
+comment: it is not the same as [1; 2; 3; 4] but close.
+this is because linear least squares is solely an approximation of x.
+rows do not align on the same values of x, more rows than needed to
+approximate the value of x.
+
+==============================
+Q2
+==============================
+
+random_matrix =
+
+    82    92    28
+    91    63    55
+    12     9    96
+
+***********************
+Pair #1
+e_value =
+
+  -19.2103
+
+
+e_vector =
+
+    0.6745
+   -0.7382
+   -0.0126
+
+random_matrix * x:
+
+ans =
+
+  -12.9571
+   14.1806
+    0.2418
+
+lambda * x:
+
+ans =
+
+  -12.9571
+   14.1806
+    0.2418
+
+***********************
+Pair #2
+e_value =
+
+  175.3338
+
+
+e_vector =
+
+   -0.7175
+   -0.6717
+   -0.1847
+
+random_matrix * x:
+
+ans =
+
+ -125.7966
+ -117.7634
+  -32.3876
+
+lambda * x:
+
+ans =
+
+ -125.7966
+ -117.7634
+  -32.3876
+
+***********************
+Pair #3
+e_value =
+
+   84.8765
+
+
+e_vector =
+
+   -0.5445
+   -0.2598
+    0.7975
+
+random_matrix * x:
+
+ans =
+
+  -46.2132
+  -22.0470
+   67.6926
+
+lambda * x:
+
+ans =
+
+  -46.2132
+  -22.0470
+   67.6926
+
+***********************
